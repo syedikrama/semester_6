@@ -1,0 +1,57 @@
+euro <- 327.23
+dollar <- 283.19
+pound <- 384.38
+riyal <- 75.45
+dirham <- 77.08
+cal <- function(){
+  pkr <- as.numeric(readline("Enter Amount In PKR : "));
+  curr <- readline("Select Currency : EURO , Dollar , Pound , Riyal , Dirham : ")
+
+  res <- switch(curr,
+    EURO = pkr / euro,
+    Dollar = pkr / dollar,
+    Pound = pkr / pound,
+    Riyal = pkr / riyal,
+    Dirham = pkr / dirham,
+    "Invalid Currency")
+
+    cat("Your PKR Amount = " , pkr , "Rupees Change Into", curr ,"is : ", res ,curr)
+
+}
+cal()
+# 
+  pkr <- as.numeric(readline("Enter Amount In PKR : "));
+  curr <- readline("Select Currency : EURO , Dollar , Pound , Riyal , Dirham : ")
+
+cal2 <- function(amt , crr){
+
+  res <- switch(curr,
+                EURO = amt / euro,
+                Dollar = amt / dollar,
+                Pound = amt / pound,
+                Riyal = amt / riyal,
+                Dirham = amt / dirham,
+                "Invalid Currency")
+
+  cat("Your PKR Amount = " , pkr , "Rupees Change Into", curr ,"is : ", res ,curr)
+
+}
+cal2(pkr , curr)
+
+# 
+# places <- c("Frere Hall" , "Mohatta Palace Museum" , "Mazar-e-Quaid" , "PAF Museum" , "Safari Park" , "National Museum" , "Hill Park" , "Do Darya" , "Pakistan Maritime Muesum" , "Clifton Beach")
+# for(a in places){
+#   cat(a , "\n")
+# }
+# print(places[5:10])
+# 
+# city <- list(
+#   name = "Karachi",
+#   isMetropolis = TRUE,
+#   famousPlaces = places,
+#   province = "Sindh"
+# )
+# cat("1- City Name Is ", city$name ,"\n" )
+# cat("2- IsMetropolis ", city$isMetropolis ,"\n" )
+# cat("3- Fampus Place is ", city$famousPlaces ,"\n" )
+# cat("4- Provincs of", city$province ,"\n" )

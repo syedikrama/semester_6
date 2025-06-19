@@ -1,0 +1,36 @@
+num1 <- as.numeric(readline("Enter number 1 : "))
+num2 <- as.numeric(readline("Enter number 2 : "))
+
+operators <- readline("Enter Operator : ")
+print("--------- using switch case ---------")
+
+answer <- switch(operators,
+                 add = num1 + num2,
+                 sub = num1 - num2,
+                 mul = num1 * num2,
+                 div = num1 / num2,
+                 pow = num1 ^ num2,
+                 "Invalid Operators")
+
+cat("your number 1 is : " , num1 , " " , "and number 2 is :" , num2 , " " , "= " , answer)
+
+
+
+# "loops   for , while , repeat"
+# 
+# start <- as.numeric(readline("Enter starting number : "));
+# end <- as.numeric(readline("Enter ending number : "));
+# increament <- as.numeric(readline("Enter Increament : "));
+# 
+# number <- seq(from = start , to = end , by = increament)
+# 
+# for(a in number){
+#   print(a)
+# }
+# 
+# i <- 1
+# while(i <= 20){
+#   print(i)
+#   i <- i+5
+# }
+# 

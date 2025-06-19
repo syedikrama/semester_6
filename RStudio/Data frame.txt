@@ -1,0 +1,30 @@
+# Data frame
+
+name = c("Custard" , "Jelly" , "Biryani Masala" , "Chicken Cube" , "Coco Powder" ,"Phenyl", "Kheer Mix" , "Sauce")
+category = c("Food" , "Food" , "Spicies" , "Food" , "Food" , "Chemical" , "Food" , "Food")
+brand = c("Delight" , "Delight" , "Shan" , "Knoor" , "Rosmore" , "Tyfon" , "Laziza" , "Shangrila")
+price = c(100 , 70 , 70 , 75 , 150 ,280 , 150 , 200)
+size = c("250gm" , "55gm" , "50gm" , "25gm" , "100gm" , "3lit" , "155gm" , "300ml")
+
+product = data.frame(
+  Product_name = name,
+  Product_category = category,
+  Product_brand = brand,
+  Product_price = price,
+  Product_size = size
+)
+
+print(product)
+print(product[3:6 ,])
+print(product[ , c('Product_name',"Product_category","Product_price")])
+print(product[6 , ])
+
+product$Available = c("No" , "Yes" , "Yes" , "Yes" , "No" , "Yes" , "No" , "No")
+
+product <- rbind(product,
+                 c( Product_name = "Khushbo wala powder",
+                    Product_category = "pata nahi",
+                    Product_brand = "Loreal",
+                    Product_price = 500,
+                    Product_size = "250gm",
+                    Available = "Yes")) 
