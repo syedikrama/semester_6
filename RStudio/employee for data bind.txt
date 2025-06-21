@@ -1,0 +1,47 @@
+# Data frame
+
+name = c("Ali" , "Ahmed" , "Sara" , "Umer" , "Irtiza" ,"Benish")
+department = c("Development" , "Quality Assurance" , "Manager" , "Business Development" , "IT" , "Administration")
+designation = c("Chief operations officer" , "Director." , "Chief compliance officer" , "President." , "Chief financial officer" , "Chief technology officer ")
+gender = c("Male" , "Male" , "Female" , "Male" , "Male" ,"Female")
+workingDay = c( 25 , 26 , 27 , 22 , 9 , 23)
+
+Employee = data.frame(
+  Employee_name = name,
+  Employee_dapartment = department,
+  Employee_designation = designation,
+  Employee_gender = gender,
+  Employee_working = workingDay
+)
+
+per_day_salary <- 1500
+Employee$Basic_salary <- as.numeric(Employee$Employee_working * per_day_salary)
+Employee$House_allounce <- as.numeric(Employee$Basic_salary * 0.16)
+Employee$Medical_allouncs <- as.numeric(Employee$Basic_salary * 0.08)
+Employee$Fuel_allouncs <- as.numeric(Employee$Basic_salary * 0.04)
+Employee$Gross_salary <- Employee$Basic_salary + Employee$House_allounce + Employee$Medical_allouncs + Employee$Fuel_allouncs
+
+# Employee <- rbind(Employee,
+#                  c( Employee_name = "Khushbo wala powder",
+#                     Employee_category = "pata nahi",
+#                     Employee_brand = "Loreal",
+#                     Employee_price = 500,
+#                     Employee_size = "250gm",
+#                     Employee = "Yes")) 
+
+print(Employee)
+
+# save data in csv
+getwd()
+
+write.csv(Employee, file = "Ikrama.csv")
+# agr number ky bagair likhna hai tu
+write.csv(Employee, file = "Ikrama.csv" row.names = FALSE)
+
+# delete colum
+Employee$Employee_gender <- NULL
+# Employee$Employee <- NULL
+
+print(Employee[Employee$Gross_salary > 50000 , ])
+print(Employee[Employee$Employee_working < 10 , ])
+print(Employee[Employee$Employee_designation = " Manager" , ])
